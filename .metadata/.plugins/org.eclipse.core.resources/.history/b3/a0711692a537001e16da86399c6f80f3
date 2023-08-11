@@ -1,0 +1,29 @@
+package main;
+
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+import inputs.KeyboardInputs;
+import inputs.MouseInputs;
+
+// dung de dieu khien tro choi
+public class GamePanel extends JPanel{
+	private MouseInputs mouseInputs;
+	private int xDelta = 0, yDelta = 0;
+	public GamePanel() {
+		// trình nghe
+		mouseInputs = new MouseInputs();
+		addKeyListener(new KeyboardInputs(this));
+		//nghe chuột
+		addMouseListener(mouseInputs);
+		addMouseMotionListener(mouseInputs);
+	}
+	public void changeXdelta(int value) {
+		
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.fillRect(10, 100, 500, 50);
+	}
+}

@@ -1,0 +1,20 @@
+package main;
+
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+import inputs.KeyboardInputs;
+
+// dung de dieu khien tro choi
+public class GamePanel extends JPanel{
+	public GamePanel() {
+		// trình nghe
+		addKeyListener(new KeyboardInputs());
+			
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.fillRect(10, 100, 500, 50);
+	}
+}

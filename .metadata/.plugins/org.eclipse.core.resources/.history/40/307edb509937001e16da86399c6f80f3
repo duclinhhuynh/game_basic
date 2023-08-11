@@ -1,0 +1,11 @@
+package main;
+
+import javax.swing.JFrame;
+
+public class GameWindow {
+	// cửa số game 
+	private JFrame jframe;
+	public GameWindow() {
+		jframe = new JFrame();
+	}
+}
