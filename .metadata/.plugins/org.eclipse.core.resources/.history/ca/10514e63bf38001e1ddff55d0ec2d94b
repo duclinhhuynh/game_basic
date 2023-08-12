@@ -1,0 +1,53 @@
+package main;
+
+import static utilz.Constaints.Playerconstaints.GetSpriteAmount;
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import static main.Game.GAME_HEIGHT;
+import static main.Game.GAME_WIDTH;
+
+// dung de dieu khien tro choi
+public class GamePanel extends JPanel {
+	private MouseInputs mouseInputs;
+	private KeyboardInputs keyboard;
+	private Game game;
+	// khai báo khung hình/giây
+
+	// Temporary , just for effect
+//	private ArrayList<MyRect> rects = new ArrayList<>();
+
+	public GamePanel(Game game) {
+
+		// trình nghe
+		mouseInputs = new MouseInputs(this);
+		this.game = game;
+//		addKeyListener(new KeyboardInputs(this));
+		setPanelSize();
+		keyboard = new KeyboardInputs(this);
+		addKeyListener(keyboard);
+		// nghe chuột
+		addMouseListener(mouseInputs);
+		addMouseMotionListener(mouseInputs);
+		setFocusable(true);
+	}
+
+	public void setPanelSize() {
+		Dimension size = new Dimension(GAME_WIDTH, GAME_HEIGHT);
+		setPreferredSize(size);
+	}
+
+	public void updateGame() {
+		
+	}
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+//		subImg = img.getSubimage(1*64, 8*40, 60, 40);
+		game.render(g);
+	}
+	
+	public Game getGame() {
+		return game;
+	}
+}

@@ -1,0 +1,14 @@
+package entitié;
+
+public class Player extends Entity{
+	
+	private BufferedImage[][] animations;
+	public Player(float x, float y) {
+		super(x,y);
+	}
+	
+	public void update() {
+		
+	}
+	
+}

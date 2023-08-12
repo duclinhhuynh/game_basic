@@ -1,0 +1,65 @@
+package main;
+
+import static utilz.Constaints.Playerconstaints.GetSpriteAmount;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+import inputs.KeyboardInputs;
+import inputs.MouseInputs;
+import static utilz.Constaints.Playerconstaints.*;
+import static utilz.Constaints.Directions.*;
+
+// dung de dieu khien tro choi
+public class GamePanel extends JPanel {
+	private MouseInputs mouseInputs;
+	private KeyboardInputs keyboard;
+	// khai báo khung hình/giây
+	private float xDelta = 100, yDelta = 100;
+	private float xDir = 1f, yDir = 1f;
+	private BufferedImage img, subImg;
+	private BufferedImage[][] animations;
+	// tốc độ hoạt ảnh
+	private int aniTick, aniIndex, aniSpeed = 15;
+	private int playerAction = IDLE;
+	private int playerDir = -1;
+	private boolean moving = false;
+
+	// Temporary , just for effect
+//	private ArrayList<MyRect> rects = new ArrayList<>();
+
+	public GamePanel() {
+
+		// trình nghe
+		mouseInputs = new MouseInputs(this);
+		importImg();
+		loadAnimation();
+//		addKeyListener(new KeyboardInputs(this));
+		setPanelSize();
+		keyboard = new KeyboardInputs(this);
+		addKeyListener(keyboard);
+		// nghe chuột
+		addMouseListener(mouseInputs);
+		addMouseMotionListener(mouseInputs);
+		setFocusable(true);
+	}
+
+	public void setPanelSize() {
+		Dimension size = new Dimension(1280, 800);
+		setMinimumSize(size);
+		setPreferredSize(size);
+
+	}
+	public void updateGame() {
+	}
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+//		subImg = img.getSubimage(1*64, 8*40, 60, 40);
+	}
+}

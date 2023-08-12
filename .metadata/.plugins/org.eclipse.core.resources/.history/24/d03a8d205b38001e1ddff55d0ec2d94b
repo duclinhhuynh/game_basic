@@ -1,0 +1,5 @@
+package entitié;
+
+public abstract class Entity {
+
+}	

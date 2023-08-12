@@ -1,0 +1,36 @@
+package entitié;
+
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+
+public class Player extends Entity {
+
+	private BufferedImage[][] animations;
+
+	public Player(float x, float y) {
+		super(x, y);
+	}
+
+	public void update() {
+
+	}
+
+	public void render() {
+
+	}
+
+	private void loadAnimation() {
+		InputStream is = getClass().getResourceAsStream("/player_sprites.png");
+
+		try {
+			img = ImageIO.read(is);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

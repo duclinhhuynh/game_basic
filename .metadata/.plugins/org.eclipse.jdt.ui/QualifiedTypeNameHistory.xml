@@ -9,4 +9,9 @@
     <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
     <fullyQualifiedTypeName name="inputs.MouseInputs"/>
     <fullyQualifiedTypeName name="inputs.KeyboardInputs"/>
+    <fullyQualifiedTypeName name="java.awt.Frame"/>
+    <fullyQualifiedTypeName name="main.Game"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+    <fullyQualifiedTypeName name="utilz.Constaints"/>
 </qualifiedTypeNameHistroy>
