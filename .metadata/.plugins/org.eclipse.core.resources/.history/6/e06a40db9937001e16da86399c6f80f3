@@ -1,7 +1,0 @@
-package main;
-
-public class Game {
-	public Game() {
-		System.out.println("iam a new game");
-	}
-}
